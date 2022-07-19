@@ -62,7 +62,7 @@ $$
 - Sentence_Length(in yrs)=
 
 $$
-{(\\{(\Sigma{optionVal}})^{0.8}*(crimeVal)^{1.5}*\sqrt[3]{clientVal})}\above 2pt 12  
+\Sigma{optionVal}^{0.8}*crimeVal^{1.5}*\sqrt[3]{clientVal}\above 2pt 12 
 $$
 
 - Allow the user to have multiple client trials in a single session
@@ -84,12 +84,3 @@ $$
 - Maintain the score data of the users for all the previous sessions to display messages like Highest Trial Score, Highest Session Score, Avg Trial Score, etc.
 
 ---
-
-# Tasks to do to reach the end
-
-<aside>
-⭐ What are the tasks to complete? What is the order in which we will do the tasks? When will do these tasks?
-
-</aside>
-
-[Create a method to calculate the score for the trial and session and display the trial score after every trial and the highest session score as soon as the username is taken](https://www.notion.so/Create-a-method-to-calculate-the-score-for-the-trial-and-session-and-display-the-trial-score-after-e-31b2a44fef5e4c64b05df933682da45e)
