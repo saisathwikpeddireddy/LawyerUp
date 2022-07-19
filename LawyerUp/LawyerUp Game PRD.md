@@ -62,7 +62,7 @@ $$
 - Sentence_Length(in yrs)=
 
 $$
-\Sigma{optionVal}^{0.8}*crimeVal^{1.5}*\sqrt[3]{clientVal}\above 2pt 12 
+\Sigma{optionVal}^{0.8}\*crimeVal^{1.5}\*\sqrt[3]{clientVal}\above 2pt 12 
 $$
 
 - Allow the user to have multiple client trials in a single session
