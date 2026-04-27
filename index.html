@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LawyerUp</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="courtroom-bg" aria-hidden="true">
+      <div class="spotlight spotlight-left"></div>
+      <div class="spotlight spotlight-right"></div>
+      <div class="grain"></div>
+    </div>
+
+    <main class="app-shell">
+      <header class="topbar" aria-label="Career status">
+        <div class="brand-lockup">
+          <span class="brand-mark">LU</span>
+          <div>
+            <p class="eyebrow">Noir Courtroom RPG</p>
+            <h1>LawyerUp</h1>
+          </div>
+        </div>
+        <div class="career-strip">
+          <div>
+            <span>Rank</span>
+            <strong id="career-rank">Intern</strong>
+          </div>
+          <div>
+            <span>Session</span>
+            <strong id="session-score">0</strong>
+          </div>
+          <div>
+            <span>Best</span>
+            <strong id="best-score">0</strong>
+          </div>
+          <div>
+            <span>Streak</span>
+            <strong id="career-streak">0</strong>
+          </div>
+        </div>
+      </header>
+
+      <section class="screen active" id="name-screen" aria-labelledby="name-title">
+        <div class="intro-stage">
+          <div class="intro-copy">
+            <p class="eyebrow">Command center online</p>
+            <h2 id="name-title">Step into the defense room.</h2>
+            <p class="lede">Build a legal career across tense cases, choose your defense philosophy, and move the courtroom with every decision.</p>
+          </div>
+          <form id="name-form" class="login-dossier">
+            <label for="player-name">Attorney name</label>
+            <div class="inline-form">
+              <input id="player-name" name="player-name" type="text" autocomplete="name" maxlength="32" required>
+              <button type="submit">Open Case Desk</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="screen" id="crime-screen" aria-labelledby="crime-title">
+        <div class="dashboard-grid">
+          <section class="career-panel" aria-label="Career dossier">
+            <p class="eyebrow" id="welcome-label">Career desk</p>
+            <h2 id="crime-title">Choose the next case.</h2>
+            <div class="career-meter">
+              <div>
+                <span id="rank-label">Intern</span>
+                <strong id="rank-progress-label">0 / 100 XP</strong>
+              </div>
+              <div class="meter-track"><span id="rank-progress"></span></div>
+            </div>
+            <div class="career-stats">
+              <div><span>Cases</span><strong id="career-cases">0</strong></div>
+              <div><span>Badges</span><strong id="badge-count">0</strong></div>
+              <div><span>Perfects</span><strong id="perfect-count">0</strong></div>
+            </div>
+            <div class="badge-rack" id="badge-rack"></div>
+          </section>
+          <section class="case-board" aria-label="Available cases">
+            <div class="board-header">
+              <p class="eyebrow">Active files</p>
+              <span id="case-count-label">0 complete categories</span>
+            </div>
+            <div class="crime-grid" id="crime-grid"></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="screen" id="briefing-screen" aria-labelledby="briefing-title">
+        <div class="briefing-layout">
+          <aside class="client-dossier">
+            <p class="eyebrow">Client file</p>
+            <h2 id="briefing-title">Case briefing</h2>
+            <dl id="briefing-details"></dl>
+          </aside>
+          <section class="strategy-room">
+            <div class="evidence-strip" id="evidence-strip"></div>
+            <div class="section-heading">
+              <p class="eyebrow">Defense posture</p>
+              <h2>Choose your strategy.</h2>
+              <p>Each posture changes how the courtroom reacts to your choices.</p>
+            </div>
+            <div class="strategy-grid" id="strategy-grid"></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="screen" id="trial-screen" aria-labelledby="question-text">
+        <div class="trial-grid">
+          <aside class="trial-sidebar">
+            <p class="eyebrow">Live trial</p>
+            <h2 id="trial-client-name"></h2>
+            <p id="trial-strategy-label"></p>
+            <div class="stat-stack" id="stat-stack"></div>
+            <div class="consultant-box">
+              <div>
+                <span>Consultant hints</span>
+                <strong id="hints-left">2</strong>
+              </div>
+              <div>
+                <span>Sentence profile</span>
+                <strong id="sentence-profile">0</strong>
+              </div>
+            </div>
+          </aside>
+
+          <section class="trial-main">
+            <div class="question-topline">
+              <span id="progress-label">Question 1 of 10</span>
+              <button id="hint-button" type="button">Consult</button>
+            </div>
+            <h2 id="question-text"></h2>
+            <p class="consultant-note hidden" id="hint-text"></p>
+            <div class="options" id="options"></div>
+            <div class="reaction-panel hidden" id="reaction-panel">
+              <p class="eyebrow">Court reaction</p>
+              <strong id="reaction-title"></strong>
+              <p id="reaction-copy"></p>
+              <div class="delta-row" id="delta-row"></div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="screen verdict-screen" id="result-screen" aria-labelledby="result-title">
+        <div class="verdict-banner">
+          <p class="eyebrow">Verdict delivered</p>
+          <h2 id="result-title"></h2>
+          <p id="result-copy"></p>
+        </div>
+        <div class="verdict-grid">
+          <div class="score-orbit">
+            <span>Trial grade</span>
+            <strong id="trial-score">0</strong>
+            <small id="grade-label">Pending</small>
+          </div>
+          <div class="result-stats">
+            <div><span>Final sentence</span><strong id="final-years">0 years</strong></div>
+            <div><span>Sentence reduced</span><strong id="reduced-years">0 years</strong></div>
+            <div><span>Strategy</span><strong id="strategy-result">None</strong></div>
+          </div>
+          <div class="verdict-notes">
+            <div>
+              <span>Strongest move</span>
+              <strong id="strongest-move">None</strong>
+            </div>
+            <div>
+              <span>Weakest move</span>
+              <strong id="weakest-move">None</strong>
+            </div>
+          </div>
+        </div>
+        <div class="unlock-row" id="unlock-row"></div>
+        <div class="actions">
+          <button id="next-trial" type="button">Take another case</button>
+          <button id="end-session" type="button" class="secondary">Close session</button>
+        </div>
+      </section>
+
+      <section class="screen" id="summary-screen" aria-labelledby="summary-title">
+        <div class="summary-layout">
+          <div>
+            <p class="eyebrow">Session archived</p>
+            <h2 id="summary-title"></h2>
+            <p id="summary-copy"></p>
+          </div>
+          <div class="trial-list" id="trial-list"></div>
+        </div>
+        <div class="actions">
+          <button id="restart" type="button">Start new attorney</button>
+          <button id="back-to-desk" type="button" class="secondary">Return to case desk</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
